@@ -1,0 +1,42 @@
+type Query {
+	products: [Product]
+	orders: [Order]
+	orderdetails: [Orderdetail]
+}
+type Mutation {
+	# Product
+	GetDetailProduct(id: Int): Product
+	CreateProduct(name: String, stock:Int, price: Float	): Product
+	UpdateProduct(id:Int, name: String, stock:Int, price:Float): Product
+	DeleteProduct(id:Int): Product
+
+	# Order
+	GetDetailOrder(id: Int): Order
+	CreateOrder(transcode:Int): Order
+
+	# OrderDetail
+	
+
+
+}
+type Product {
+	id: Int,
+	name: String,
+	stock: Int,
+	price: Float,
+	created: String
+}
+
+type Order {
+	id: Int,
+	transcode: String,
+	created: String
+}
+
+type Orderdetail {
+	id: Int,
+	productid: Int,
+	quantity: Int,
+	price: Float,
+	order_id: Int
+}
